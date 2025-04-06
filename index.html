@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body class="relative min-h-screen">
+    <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover z-[-1]">
+        <source src="videos/9669050-hd_1920_1080_25fps.mp4" type="video/mp4">
+
+    </video>
+
+    <div class="absolute inset-0 bg-gray-900/50 backdrop-blur-md z-0"></div>
+
+    <div class="relative flex justify-center items-center h-screen z-10">
+        <div class="flex flex-col items-center">
+            <img class="w-[280px] -mb-[190px] z-10 rounded-md shadow-xl shadow-black/50" id="albumCover" src="images/Riptide.jpg" alt="Album Cover">
+            <div class="bg-gradient-to-t from-[#560bad] to-[#7b2cbf] flex justify-center items-center w-[360px] h-[450px] rounded-2xl shadow-xl shadow-black/50">
+                <div class="bg-black w-[320px] h-[120px] rounded-2xl mt-[300px] flex flex-col justify-center items-center">
+                    <!-- Progress Bar -->
+                    <input type="range" value="0" min="0" max="100" class="w-[280px] h-1 mb-2 accent-[#7b2cbf]" id="progressBar">
+
+                    <!-- Time Display -->
+                    <div class="text-white text-sm mb-2">
+                        <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                    </div>
+
+                    <!-- Control Buttons -->
+                    <div class="flex justify-between w-[200px]">
+                      
+                        <button class="text-white " id="rewindBtn"><i class="fas fa-backward"></i></button>
+                        <button class="text-white text-2xl hover:text-[#7b2cbf]" id="playPauseBtn"><i class="fas fa-play"></i></button>
+                        <button class="text-white hover:text-[#7b2cbf]" id="forwardBtn"><i class="fas fa-forward"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio id="audioPlayer"></audio>
+</body>
+</html>
